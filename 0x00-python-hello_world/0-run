@@ -1,2 +1,2 @@
 #!/bin/bash
-pycodestyle ./$PYFILE
+python3 ./$PYFILE
