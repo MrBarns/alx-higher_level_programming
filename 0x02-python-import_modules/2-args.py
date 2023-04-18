@@ -13,6 +13,6 @@ if __name__ == "__main__":
     else:
         print("{:d} arguments:".format(num_args - 1))
 
-        while ind < num_args:
-            print("{:d}: {}".format(ind, argv[ind]))
-            ind += 1
+    while ind < num_args:
+        print("{:d}: {}".format(ind, argv[ind]))
+        ind += 1
