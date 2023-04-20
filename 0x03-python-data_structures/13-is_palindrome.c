@@ -19,9 +19,16 @@ int is_palindrome(listint_t **head)
 
 	front = *head;
 	for (back = front; back->next != 0; back = back->next)
+	{
+		if (back->next->next)
+		{
+			back = back->next;
+			count++;
+		}
 		count++;
+	}
 
-	if ((count) && (back->n == front->n))
+	if (back->n == front->n)
 		palindromic = 1;
 
 	count++;
@@ -31,7 +38,12 @@ int is_palindrome(listint_t **head)
 		back = front;
 		count -= 2;
 		for (countcpy = count; countcpy > 1; countcpy--)
-			back = back->next;
+			if (countcpy - 2 > 1)
+			{
+				back = back->next->next;
+				countcpy--;
+			} else
+				back = back->next;
 
 		if (front->n != back->n)
 			palindromic = 0;
