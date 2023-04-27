@@ -10,43 +10,39 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *front, *back;
-	unsigned int count = 0, countcpy;
-	int palindromic = 0;
+	listint_t *slow, *fast, *prev, *temp;
+	int palindromic = 1;
 
-	if (*head == NULL)
-		return (1);
-
-	front = *head;
-	for (back = front; back->next != 0; back = back->next)
+	fast = slow = prev = *head;
+	if (*head)
 	{
-		if (back->next->next)
+		while (fast != NULL && fast->next != NULL)
 		{
-			back = back->next;
-			count++;
+			fast = fast->next->next;
+			prev = slow;
+			slow = slow->next;
 		}
-		count++;
-	}
-
-	if (back->n == front->n)
-		palindromic = 1;
-
-	count++;
-	while (count && palindromic)
-	{
-		front = front->next;
-		back = front;
-		count -= 2;
-		for (countcpy = count; countcpy > 1; countcpy--)
-			if (countcpy - 2 > 1)
+		if (fast != NULL)
+			slow = slow->next;
+		prev = 0;
+		while (slow)
+		{
+			temp = slow->next;
+			slow->next = prev;
+			prev = slow;
+			slow = temp;
+		}
+		slow = *head;
+		while (prev)
+		{
+			if (prev->n != slow->n)
 			{
-				back = back->next->next;
-				countcpy--;
-			} else
-				back = back->next;
-
-		if (front->n != back->n)
-			palindromic = 0;
+				palindromic = 0;
+				break;
+			}
+			slow = slow->next;
+			prev = prev->next;
+		}
 	}
 
 	return (palindromic);
