@@ -27,7 +27,7 @@ void print_python_bytes(PyObject *p)
 	printf("  size: %zd\n  trying string: %s\n", len, str);
 
 	if (len < 10)
-		lim = len;
+		lim = len + 1;
 	else
 		lim = 10;
 
