@@ -4,7 +4,5 @@ def safe_print_integer(value):
         print("{:d}".format(value))
     except (ValueError, TypeError):
         return False
-    except:
-        raise
     else:
         return True
