@@ -29,7 +29,7 @@ def matrix_divided(matrix, div):
         if type(matrix) != list or len(matrix) == 0:
             raise TypeError
         for x in matrix:
-            if type(x) != list:
+            if type(x) != list or len(x) == 0:
                 raise TypeError
             for y in x:
                 if type(y) != int and type(y) != float:
