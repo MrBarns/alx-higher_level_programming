@@ -123,3 +123,8 @@ Exceptions
 	Traceback (most recent call last):
 	...
 	TypeError: div must be a number
+
+	>>> matrix_divided([], 10)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats

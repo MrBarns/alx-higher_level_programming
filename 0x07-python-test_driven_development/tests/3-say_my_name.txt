@@ -1,0 +1,42 @@
+============================
+The ``3-say_my_name`` Module
+============================
+
+
+``say_my_name``
+================
+
+The function takes one or two string arguments and prints as below
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+    >>> say_my_name("Bob")
+    My name is Bob
+
+Exceptions
+__________
+
+The function raises a TypeError in the following circumstances
+
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+    ...
+    first_name must be a string
+
+    >>> say_my_name("Walter", ["White"])
+    Traceback (most recent call last):
+    ...
+    last_name must be a string
+
+    >>> say_my_name(["Walter", "White"])
+    Traceback (most recent call last):
+    ...
+    first_name must be a string
+
+    >>> say_my_name("")
+    Traceback (most recent call last):
+    ...
+    first_name must be a string
