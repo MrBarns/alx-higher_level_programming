@@ -46,6 +46,8 @@ Edge case float arguments will raise an error
 
 ::
 
+	Infinity
+	========
 	>>> add_integer(float('inf'))
 	Traceback (most recent call last):
 	...
@@ -55,6 +57,13 @@ Edge case float arguments will raise an error
 	Traceback (most recent call last):
 	...
 	OverflowError: cannot convert float infinity to integer
+
+	Nan
+	===
+	>>> add_integer(float('Nan'))
+	Traceback (most recent call last):
+	...
+	ValueError: cannot convert float NaN to integer
 
 Non-numbers
 ===========
