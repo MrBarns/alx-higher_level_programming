@@ -21,7 +21,6 @@ Function called with integer argument
 Function called with 0
 
     >>> print_square(0)
-    <BLANKLINE>
 
 Function called with integer less than 0
 

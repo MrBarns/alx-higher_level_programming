@@ -30,13 +30,10 @@ def print_square(size):
         raise e
     else:
         y = size
-        if y == 0:
+        while y > 0:
+            x = size
+            while x > 0:
+                print("#", end="")
+                x -= 1
             print()
-        else:
-            while y > 0:
-                x = size
-                while x > 0:
-                    print("#", end="")
-                    x -= 1
-                print()
-                y -= 1
+            y -= 1
