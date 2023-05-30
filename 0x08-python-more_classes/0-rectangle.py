@@ -6,5 +6,7 @@ Module defines an empty class
 """
 
 
-def Rectangle():
+class Rectangle:
+    """Class that defines a rectangle"""
+
     pass
