@@ -1,3 +1,10 @@
 **/*main.py
 
+**/*main.c
+
 **/*~
+
+.gitignore
+
+
+**/__pycache__
